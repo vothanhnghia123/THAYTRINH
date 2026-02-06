@@ -1,0 +1,163 @@
+/* reset */
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* header */
+.header{
+    width: 100%;
+    height:auto;
+    background-color: red;
+}
+.container{
+    background-color: white;
+    
+}
+/* nav layout */
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+.nav-logo{
+    width: 300px;
+}
+/* menu */
+.list-link{
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+}
+.list-link li{
+    margin-right: 20px;
+}
+
+.link{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    
+}
+/*menu con*/
+/* dropdown */
+.dropdown{
+    position: relative;
+}
+
+/* khung mega */
+.mega-menu{
+    position: absolute;
+    top: 25px;
+    left: 0;
+    background:#FEFEFB;
+    padding: 20px;
+    border-radius:10px;
+    
+    display:none;        /* ẩn */
+    gap: 15px;               /* khoảng cột */
+}
+
+/* hover hiện */
+.dropdown:hover .mega-menu{
+    display: flex;        /* 🔥 flex để chia cột */
+}
+
+/* mỗi cột */
+.column{
+    min-width: 120px;
+}
+
+/* tiêu đề */
+.column h4{
+    margin-bottom: 10px;
+}
+
+/* list */
+.column ul{
+    list-style: none;
+    padding-left: 10px;
+}
+
+.column a{
+    text-decoration: none;
+    color: black;
+}
+/*-------------tim kiem va dang ky, nhap */
+.search-login{
+    display: flex;
+    gap: 10px;
+}
+
+/* Nút tròn */
+.button-seach,
+.button-login,
+.button-cart{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: #f2f2f2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    padding: 0;          /* QUAN TRỌNG */
+}
+
+.button-login,
+.button-seach,
+.button-cart{
+    border: 0;
+}
+.button-seach i,
+.button-login i,
+.button-cart i{
+    font-size: 14px;
+}
+
+/*dang ky , nhap*/
+.menu-login{
+    position: relative;
+    display: inline-block;
+}
+
+/* Ẩn menu */
+.dropdown-menu-login{
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 150px;
+
+    display: none;
+}
+
+/* Hover hiện */
+.menu-login:hover .dropdown-menu-login{
+    display: block;
+}
+
+/* Style */
+.dropdown-menu-login li{
+    padding: 10px;
+}
+
+.dropdown-menu-login li:hover{
+    background: #f2f2f2;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
