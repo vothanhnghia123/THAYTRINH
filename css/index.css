@@ -9,7 +9,7 @@ body{
 .header{
     width: 100%;
     height:auto;
-    background-color: red;
+    background-color: black;
 }
 .container{
     background-color: white;
@@ -60,6 +60,7 @@ body{
     
     display:none;        /* ẩn */
     gap: 15px;               /* khoảng cột */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* độ bống :ngan|dọc|dộ mờ|nàu*/
 }
 
 /* hover hiện */
@@ -73,24 +74,28 @@ body{
 }
 
 /* tiêu đề */
-.column h4{
+.column-link{
     margin-bottom: 10px;
+    color: blue;
+    font-weight: bold;
+    text-decoration: none;
 }
-
 /* list */
 .column ul{
     list-style: none;
     padding-left: 10px;
 }
-
-.column a{
+.column li a{
     text-decoration: none;
-    color: black;
+    color:black;
 }
+
 /*-------------tim kiem va dang ky, nhap */
 .search-login{
     display: flex;
     gap: 10px;
+    width: 200px;
+    justify-content: end;
 }
 
 /* Nút tròn */
@@ -121,6 +126,42 @@ body{
 .button-cart i{
     font-size: 14px;
 }
+/* ===== Tìm kiếm ===== */
+
+.menu-search{
+    display:flex;
+    align-items:center;
+    position:relative;
+}
+
+/* Nút kính lúp */
+.button-search{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:none;
+    cursor:pointer;
+}
+
+/* Ô search ban đầu ẩn */
+.input-search{
+    position:absolute;
+    right:45px;     /* nằm bên trái nút */
+    width:0;
+    opacity:0;
+    padding:8px;
+    border:1px solid #ccc;
+    border-radius:20px;
+    outline:none;
+    transition:0.3s;
+}
+
+/* Hover hiện ra */
+.menu-search:hover .input-search{
+    width:180px;
+    opacity:1;
+}
+
 
 /*dang ky , nhap*/
 .menu-login{
@@ -134,7 +175,7 @@ body{
     top: 40px;
     right: 0;
     background: white;
-    border: 1px solid #ccc;
+     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* độ bống :ngan|dọc|dộ mờ|nàu*/
     list-style: none;
     padding: 0;
     margin: 0;
@@ -156,8 +197,4 @@ body{
 .dropdown-menu-login li:hover{
     background: #f2f2f2;
 }
-
-a{
-    text-decoration: none;
-    color: black;
-}
+/*menu*/

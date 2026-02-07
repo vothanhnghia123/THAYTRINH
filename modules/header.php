@@ -10,7 +10,8 @@
                         <div class="mega-menu">
                             <!-- cột 1 -->
                             <div class="column">
-                                <h6>Tiểu thuyết</h6>
+                                
+                                <a class="column-link" href="">Tiểu thuyết</a>
                                 <ul>
                                     <li><a href="">Ngôn tình</a></li>
                                     <li><a href="">Kiếm hiệp</a></li>
@@ -20,7 +21,8 @@
 
                             <!-- cột 2 -->
                             <div class="column">
-                                <h6>Khoa học</h6>
+                                
+                                <a class="column-link" href="">Khoa học</a>
                                 <ul>
                                     <li><a href="">Vũ trụ</a></li>
                                     <li><a href="">Sinh học</a></li>
@@ -29,7 +31,7 @@
 
                             <!-- cột 3 -->
                             <div class="column">
-                                <h6>Truyện tranh</h6>
+                                <a class="column-link" href="">Truyện tranh</a>
                                 <ul>
                                     <li><a href="">Manga</a></li>
                                     <li><a href="">Manhwa</a></li>
@@ -44,11 +46,14 @@
                 <h3>Book</h3>
             </div>
             <div class="search-login">
-                <div class="menu-saerch" >
-                    <button class="button-seach">
+                <div class="menu-search">
+                    <button type="button" class="button-search">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
+
+                    <input type="search" class="input-search" placeholder="Nhập để tìm...">
                 </div>
+
                 <div class="menu-cart" >
                     <button class="button-cart">
                         <i class="fa-solid fa-cart-plus"></i>

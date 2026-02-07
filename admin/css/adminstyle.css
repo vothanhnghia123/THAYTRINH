@@ -1,0 +1,23 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    background-color: beige;
+}
+.link-page{
+    height: 40px;
+    background-color: aqua;
+    padding: 10px 0px 0px 10px;
+}
+.link-page a{
+    text-decoration: none;
+    font-size: x-large;
+    font-weight: bold;
+    color: black;
+    padding: 0px 10px;
+}
