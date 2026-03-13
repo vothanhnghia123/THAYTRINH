@@ -5,11 +5,10 @@
     $temp='';
   }
   if($temp =="them"){
-    include("modules/theloai/them.php");
+    include("modules/nhaxuatban/them.php");
   }
     if($temp =="sua"){
-    include("modules/theloai/sua.php");
+    include("modules/nhaxuatban/sua.php");
   }
     // Hiển thị trang liệt kê
-  include("modules/theloai/lietke.php");
-?>
+  include("modules/nhaxuatban/lietke.php");

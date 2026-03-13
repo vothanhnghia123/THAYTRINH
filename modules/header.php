@@ -43,7 +43,7 @@
                 </ul>
             </div>
             <div class="nav-logo">
-                <h3>Book</h3>
+                <a href=""><img width="200"  src="image/bookstore_logo.png" alt=""></a>
             </div>
             <div class="search-login">
                 <div class="menu-search">
@@ -65,7 +65,7 @@
                     </button>
                         <ul class="dropdown-menu-login">
                             <li><a class="link" href="">Đăng ký</a></li>
-                            <li><a class="link" href="">Đăng </a></li>
+                            <li><a class="link" href="">Đăng nhập</a></li>
                         </ul>
                 </div>
             </div>

@@ -1,23 +1,171 @@
-body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* HEADER ADMIN */
+.admin-header{
+    width:100%;
+    background:#ffffff;
+    color:#333;
+    font-family:Arial;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
 }
 
-.container{
-    display: flex;
-    justify-content: center;
-    background-color: beige;
+/* phần trên */
+.admin-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 40px;
+    border-bottom:1px solid #e5e5e5;
 }
-.link-page{
-    height: 40px;
-    background-color: aqua;
-    padding: 10px 0px 0px 10px;
+
+.admin-title h2{
+    margin:0;
+    font-size:22px;
+    text-transform:uppercase;
+    color:#3498db;
 }
-.link-page a{
-    text-decoration: none;
-    font-size: x-large;
-    font-weight: bold;
+
+.admin-logo img{
+    height:50px;
+}
+
+/* MENU */
+.admin-menu{
+    display:flex;
+    gap:20px;
+    padding:12px 40px;
+    background:#f8f9fa;
+}
+
+/* link */
+.admin-menu a{
+    text-decoration:none;
+    color:#333;
+    padding:8px 16px;
+    border-radius:6px;
+    font-size:15px;
+    transition:0.3s;
+    font-weight:bold;
+}
+
+/* hover */
+.admin-menu a:hover{
+    background:#3498db;
+    color:white;
+}
+/* danh  */
+/* KHUNG FORM */
+.admin-form-box{
+    width:420px;
+    margin:40px auto;
+    padding:30px;
+    background:#ffffff;
+    border-radius:10px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    font-family:Arial;
+}
+
+/* TIÊU ĐỀ */
+.admin-form-title{
+    text-align:center;
+    font-size:22px;
+    margin-bottom:25px;
+    color:#2c3e50;
+}
+
+/* NHÓM INPUT */
+.admin-form-group{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:18px;
+}
+
+/* LABEL */
+.admin-form-group label{
+    margin-bottom:6px;
+    font-size:14px;
+    color:#555;
+}
+
+/* INPUT TEXT */
+.admin-input{
+    padding:10px;
+    border:1px solid #ddd;
+    border-radius:6px;
+    font-size:14px;
+    transition:0.3s;
+}
+
+/* FOCUS INPUT */
+.admin-input:focus{
+    border-color:#3498db;
+    outline:none;
+    box-shadow:0 0 5px rgba(52,152,219,0.3);
+}
+
+/* BUTTON */
+.admin-submit-btn{
+    width:100%;
+    padding:10px;
+    border:none;
+    background:#3498db;
+    color:white;
+    font-size:15px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.admin-submit-btn:hover{
+    background:#2980b9;
+}
+/* bản view của danh */
+.hienthi{
+    width: 80%;
+    margin: 40px auto;
+}
+
+.table-danhmuc{
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.table-danhmuc th{
+    background: white;
     color: black;
-    padding: 0px 10px;
+    padding: 12px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.table-danhmuc td{
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.table-danhmuc tr:hover{
+    background: #f5f5f5;
+}
+
+.table-danhmuc a{
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.table-danhmuc a:first-child{
+    background: #e74c3c;
+    color: white;
+}
+
+.table-danhmuc a:last-child{
+    background: #3498db;
+    color: white;
+}
+
+.table-danhmuc a:hover{
+    opacity: 0.8;
 }

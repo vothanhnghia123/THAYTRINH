@@ -9,12 +9,9 @@ body{
 .header{
     width: 100%;
     height:auto;
-    background-color: black;
-}
-.container{
     background-color: white;
-    
 }
+
 /* nav layout */
 .nav{
     display: flex;
@@ -169,32 +166,57 @@ body{
     display: inline-block;
 }
 
-/* Ẩn menu */
+/* nút menu */
+.button-login{
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:50%;
+    background:#f2f2f2;
+    cursor:pointer;
+    font-size:18px;
+    transition:0.3s;
+}
+
+.button-login:hover{
+    background:#e0e0e0;
+}
+
+/* dropdown */
 .dropdown-menu-login{
-    position: absolute;
-    top: 40px;
-    right: 0;
-    background: white;
-     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* độ bống :ngan|dọc|dộ mờ|nàu*/
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 150px;
-
-    display: none;
+    position:absolute;
+    top:40px;
+    right:0;
+    width:140px;
+    background:white;
+    border-radius:8px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+    list-style:none;
+    padding:5px 0;
+    display:none;
 }
 
-/* Hover hiện */
+/* hiện menu khi hover */
 .menu-login:hover .dropdown-menu-login{
-    display: block;
+    display:block;
 }
 
-/* Style */
 .dropdown-menu-login li{
-    padding: 10px;
+    width:100%;
 }
 
-.dropdown-menu-login li:hover{
-    background: #f2f2f2;
+.dropdown-menu-login .link{
+    display:block;
+    padding:10px 15px;
+    text-decoration:none;
+    color:#333;
+    font-size:14px;
+    transition:0.3s;
+}
+
+/* hover item */
+.dropdown-menu-login .link:hover{
+    background:#f5f5f5;
+    color:#ff6600;
 }
 /*menu*/

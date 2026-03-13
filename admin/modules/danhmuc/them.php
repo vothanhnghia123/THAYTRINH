@@ -1,14 +1,18 @@
-<div class="formthaotac">
-      <form class="form-dulieu" action="modules/danhmuc/xuly.php" method="post" enctype="multipart/form-data">
-        <h2>Form dữ liệu</h2>
+<div class="admin-form-box">
+    <form action="modules/danhmuc/xuly.php" method="post" enctype="multipart/form-data">
 
-        <div class="input-field">
-          <label for="">Tên danh mục</label>
-          <input type="text" name="tendanhmuc" value="" id="" require>
+        <div class="admin-form-title">
+            Form dữ liệu
         </div>
 
-        <div class="input-field">
-          <input type="submit" name="them" id="" value="Xử lý" require>
+        <div class="admin-form-group">
+            <label>Tên danh mục</label>
+            <input class="admin-input" type="text" name="tendanhmuc">
         </div>
-      </form>
+
+        <div class="admin-form-group">
+            <input class="admin-submit-btn" type="submit" name="them" value="Xử lý">
+        </div>
+
+    </form>
 </div>
