@@ -33,7 +33,7 @@ if(mysqli_num_rows($load_nxb) > 0){
 
     <td>
         <a onclick="return confirm('Bạn có chắc muốn xóa nhà xuất bản này không?')" 
-        href="index.php?ql=qlnxb&ac=sua&id=<?php echo $row['IDNXB']; ?>">
+        href="modules/nhaxuatban/xuly.php?xoa=1&id=<?php echo $row['IDNXB']; ?>">
         Xóa
         </a>
     </td>

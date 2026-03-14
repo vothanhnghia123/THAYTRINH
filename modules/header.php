@@ -3,7 +3,7 @@
         <div class="nav">
             <div class="nav-link">
                 <ul class="list-link">
-                    <li><a class="link" href="">Trang chủ</a></li>
+                    <li><a class="link" href="/THAYTRINH/index.php">Trang chủ</a></li>
                     <li><a class="link" href="">Giới thiệu</a></li>
                     <li class="dropdown">
                         <a class="link" href="">Thể loại</a>
@@ -43,7 +43,7 @@
                 </ul>
             </div>
             <div class="nav-logo">
-                <a href=""><img width="200"  src="image/bookstore_logo.png" alt=""></a>
+                <a href="/THAYTRINH/index.php"><img width="200" height="60"  src="/THAYTRINH/image/bookstore_logo.png" alt=""></a>
             </div>
             <div class="search-login">
                 <div class="menu-search">
@@ -54,10 +54,21 @@
                     <input type="search" class="input-search" placeholder="Nhập để tìm...">
                 </div>
 
-                <div class="menu-cart" >
-                    <button class="button-cart">
-                        <i class="fa-solid fa-cart-plus"></i>
-                    </button>
+                <div class="menu-cart">
+                    <a href="/THAYTRINH/modules/cart.php" class="button-cart link">
+                        <i class="fa-solid fa-cart-shopping"></i>
+
+                        <?php
+                        $dem = 0;
+                        if(isset($_SESSION['sl_them_vao_gio'])){
+                            foreach($_SESSION['sl_them_vao_gio'] as $sl){
+                                $dem += $sl;
+                            }
+                        }
+
+                        echo "<span id='cart-count' class='cart-count'>$dem</span>";
+                        ?>
+                    </a>
                 </div>
                 <div class="menu-login">
                     <button class="button-login" >
