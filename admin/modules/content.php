@@ -26,6 +26,12 @@ else if($temp == "qldonhang"){
 else if($temp == "qlchitietdonhang"){
     include("chitietdonhang/main.php");
 }
+else if($temp == "qldanhgia"){
+    include("danhgia/main.php");
+}
+else if($temp == "qlnguoidung"){
+    include("nguoidung/main.php");
+}
 else{
     include('trangchu.php');
 }

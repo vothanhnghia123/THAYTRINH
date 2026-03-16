@@ -11,6 +11,10 @@
     width:100%;
     background:white;
     border-bottom:1px solid #eee;
+    
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 /* container */
@@ -36,6 +40,7 @@
 .list-link{
     list-style:none;
     display:flex;
+    margin-top: 16px;
     align-items:center;   /* căn giữa chữ */
     gap:25px;
 }
@@ -114,6 +119,8 @@
 }
 
 .input-search{
+    width:250px;
+
     position:absolute;
     right:45px;
     width:0;
@@ -130,11 +137,45 @@
     width:180px;
     opacity:1;
 }
+/* tìm kiếm hiện bên dưới  */
+.search-result{
+    position:absolute;
+    top:100%;
+    right:45px;   /* giống input */
+    width:250px;  /* giống input khi hover */
+    background:#fff;
+    
+    border-radius:8px;
+    margin-top:5px;
+    z-index:999;
+}
+
+.search-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:8px;
+    text-decoration:none;
+}
+
+.search-item:hover{
+    background:#f5f5f5;
+}
+
+.search-item img{
+    width:35px;
+    height:45px;
+    object-fit:cover;
+}
+
+.search-item span{
+    font-size:14px;
+}
 /*giảo hàng*/
 .cart-count{
 position:absolute;
-top:-5px;
-right:-5px;
+top:-6px;
+right:-6px;
 background:red;
 color:white;
 font-size:12px;
@@ -175,14 +216,23 @@ font-weight:bold;
     top:40px;
     right:0;
 
-    width:150px;
+    min-width:160px;
+    width:auto;
+
     background:white;
     border-radius:8px;
 
     box-shadow:0 8px 20px rgba(0,0,0,0.15);
 
     list-style:none;
+    padding:10px 0;
+
     display:none;
+}
+.dropdown-menu-login li a{
+    display:block;
+    padding:10px 20px;
+    white-space:nowrap; /* tránh xuống dòng */
 }
 
 .menu-login:hover .dropdown-menu-login{
@@ -200,7 +250,272 @@ font-weight:bold;
     background:#f5f5f5;
     color:#ff6600;
 }
+/* ===== FROM ĐăNG KÝ - NHâp - THÔNG TIN NG DÙNg ===== */
+.auth-container{
+    width:400px;
+    margin:80px auto;
+    padding:40px;
 
+    background:#fff;
+    border-radius:10px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+
+    text-align:center;
+}
+
+.auth-container h2{
+    margin-bottom:25px;
+    font-weight:600;
+}
+
+.auth-form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.auth-form input{
+    padding:12px 15px;
+
+    border:1px solid #ddd;
+    border-radius:6px;
+
+    font-size:15px;
+
+    transition:0.3s;
+}
+
+.auth-form input:focus{
+    border-color:#e53935;
+    outline:none;
+    box-shadow:0 0 5px rgba(229,57,53,0.3);
+}
+
+.auth-form button{
+    padding:12px;
+
+    border:none;
+    border-radius:6px;
+
+    background:#e53935;
+    color:white;
+
+    font-size:16px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.auth-form button:hover{
+    background:#c62828;
+}
+
+
+
+.auth-switch{
+    margin-top:15px;
+    text-align:center;
+    font-size:14px;
+}
+
+.auth-switch a{
+    color:#e53935;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.auth-switch a:hover{
+    text-decoration:underline;
+}
+
+
+.login-error{
+    color:red;
+    margin-top:10px;
+    text-align:center;
+    font-size:14px;
+}
+/* ===== PROFILE USER ===== */
+.profile-container{
+    width:1000px;
+    margin:60px auto;
+    background:white;
+    padding:40px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    
+}
+.profile-content form{
+    flex:1;
+}
+
+.profile-container h2{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.user-info{
+    margin-bottom:30px;
+    width:100%;
+
+}
+
+.info-row{
+    display:flex;
+    align-items:center;
+    gap:25px;
+    border-bottom:1px solid #ddd;
+    padding:14px 0;
+}
+
+.info-row span{
+    font-weight:bold;
+}
+
+.profile-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.btn{
+    display:block;
+    text-align:center;
+    padding:12px 15px;
+    border-radius:6px;
+    text-decoration:none;
+    color:#333;
+    font-weight:600;
+    background:white;
+    border:1px solid #ddd;
+    transition:0.3s;
+}
+
+.btn:hover{
+    opacity:0.85;
+}
+
+
+.profile-content{
+    display:flex;
+    gap:40px;
+}
+
+/* cột trái */
+.profile-buttons{
+    width:180px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+/* nút nhỏ lại */
+.profile-buttons .btn{
+    padding:12px 15px;
+    font-size:14px;
+    text-align:left;   /* chữ sang trái */
+    width:100%;        /* nút rộng hết */
+}
+
+/* cột phải */
+.user-info{
+    flex:1;
+}
+
+.info-row{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    border-bottom:1px solid #ddd;
+    padding:14px 0;
+    
+}
+.info-row > input{
+    flex:1;
+    width:100%;
+    padding:8px 5px;
+    border:none;
+    outline:none;
+    background:transparent;
+    font-size:15px;
+}
+.info-row span{
+    width:130px;
+    font-weight:bold;
+}
+/* hover đổi màu xám */
+.btn:hover{
+    background:#999;
+    color:white;
+}
+
+/* nút lưu thay đổi */
+.save{
+    background:red;
+    width:150px;
+    color:white;
+}
+
+/* canh phải nút */
+.save-box{
+    display:flex;
+    justify-content:flex-end;
+    margin-top:20px;
+}
+/* thông báo cn*/
+.success-msg{
+    background:#d4edda;
+    color:#155724;
+    padding:10px;
+    margin-bottom:20px;
+    border-radius:5px;
+    text-align:center;
+}
+/*đơn hàng*/
+.order-table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+.order-table th,
+.order-table td{
+border-bottom:1px solid #ddd;
+padding:10px;
+text-align:left;
+}
+/* hiện mk củ*/
+.password-input{
+    position:relative;
+    flex:1;
+    display:flex;
+    align-items:center;
+}
+
+.password-input input{
+    width:100%;
+    flex:1;
+    padding:8px 50px 8px 5px;
+    border:none;
+    outline:none;
+    background:transparent;
+}
+
+.show-pass{
+    position:absolute;
+    right:10px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:14px;
+    color:#007bff;
+    cursor:pointer;
+}
+.password-input input{
+    padding-right:60px;
+}
 /* ===== MEGA MENU ===== */
 
 .dropdown{

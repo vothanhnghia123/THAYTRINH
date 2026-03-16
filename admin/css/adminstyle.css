@@ -29,10 +29,12 @@
 
 /* MENU */
 .admin-menu{
-    display:flex;
-    gap:20px;
-    padding:12px 40px;
-    background:#f8f9fa;
+    display: flex;
+    justify-content: center;   /* căn giữa ngang */
+    align-items: center;
+    gap: 35px;                 /* khoảng cách giữa các mục */
+    background: #f2f2f2;
+    padding: 15px 0; 
 }
 
 /* link */

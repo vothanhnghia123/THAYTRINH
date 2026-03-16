@@ -29,7 +29,5 @@
     <a href="index.php?ql=qldanhgia&ac=them">Đánh giá</a>
 
     <a href="index.php?ql=qlnguoidung&ac=them">Người dùng</a>
-
-    <a href="index.php?ql=qlvaitro&ac=them">Vai trò</a>
 </nav>
 </header>

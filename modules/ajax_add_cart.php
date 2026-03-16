@@ -30,4 +30,13 @@ if(isset($_SESSION['id_them_vao_gio'])){
 
 }
 
-echo "ok";
+$dem = 0;
+
+if(isset($_SESSION['sl_them_vao_gio'])){
+    foreach($_SESSION['sl_them_vao_gio'] as $sl){
+        $dem += $sl;
+    }
+}
+
+echo $dem;
+?>

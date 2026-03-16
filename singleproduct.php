@@ -90,7 +90,7 @@
                                 <?php echo nl2br($row['MoTa']); ?>
                             </p>
                         </div>
-
+                            
                         <div style="margin-top: 30px;">
                             <button 
                                     class="btn btn-danger btn-lg shadow-sm add-cart" 
@@ -99,9 +99,10 @@
                                 >
                                     <i class="fa-solid fa-cart-shopping"></i> THÊM VÀO GIỎ HÀNG
                                 </button>
-
                                 
+                             
                         </div>
+                       
                     </div>
                 </div>
         <?php
@@ -110,7 +111,11 @@
             echo "<div class='alert alert-warning text-center'>Rất tiếc, không tìm thấy thông tin cuốn sách này!</div>";
         }
         ?>
-
+    </div>
+    <div class="container single-product" style="margin-top: 50px; margin-bottom: 50px;">
+        <div class="row">
+            <?php include("modules/review.php"); ?>
+        </div>
     </div>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -136,11 +141,17 @@
                             }, 2000);
                         }
 
+
                         // 2. Cập nhật số lượng trên icon giỏ hàng (Header)
                         let cart = document.getElementById("cart-count");
-                        if (cart) {
-                            let count = parseInt(cart.innerText) || 0; // Tránh lỗi nếu innerText không phải số
-                            cart.innerText = count + 1;
+
+                        if(cart){
+                            if(data > 0){
+                                cart.innerText = data;
+                                cart.style.display = "inline-block";
+                            }else{
+                                cart.style.display = "none";
+                            }
                         }
 
                     })
@@ -151,6 +162,19 @@
         }
 
     });
+</script>
+<script>
+document.getElementById("btn-review").addEventListener("click", function(){
+
+    var form = document.getElementById("review-form");
+
+    if(form.style.display === "none"){
+        form.style.display = "block";
+    }else{
+        form.style.display = "none";
+    }
+
+});
 </script>
 </body>
 </html>

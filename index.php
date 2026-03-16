@@ -28,5 +28,50 @@
    <?php 
     include('modules/footer.php');
     ?>
+
+<script>
+const input = document.getElementById("search-input");
+const resultBox = document.getElementById("search-result");
+
+/* live search */
+input.addEventListener("input", function(){
+
+    let keyword = this.value.trim();
+
+    if(keyword.length == 0){
+        resultBox.innerHTML = "";
+        resultBox.style.display = "none";
+        return;
+    }
+
+    fetch("/THAYTRINH/modules/search.php?key=" + keyword)
+    .then(res => res.text())
+    .then(data => {
+
+        resultBox.innerHTML = data;
+        resultBox.style.display = "block";
+
+    });
+
+});
+
+/* click ra ngoài thì ẩn */
+document.addEventListener("click", function(e){
+
+    if(!e.target.closest(".menu-search")){
+        resultBox.style.display = "none";
+    }
+
+});
+
+/* click lại input thì hiện */
+input.addEventListener("focus", function(){
+
+    if(this.value.trim().length > 0){
+        resultBox.style.display = "block";
+    }
+
+});
+</script>
 </body>
 </html>

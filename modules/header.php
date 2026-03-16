@@ -46,38 +46,63 @@
                 <a href="/THAYTRINH/index.php"><img width="200" height="60"  src="/THAYTRINH/image/bookstore_logo.png" alt=""></a>
             </div>
             <div class="search-login">
+                <!-- tìm kiếm  -->
                 <div class="menu-search">
                     <button type="button" class="button-search">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
 
-                    <input type="search" class="input-search" placeholder="Nhập để tìm...">
-                </div>
+                    <input type="search" id="search-input" class="input-search" placeholder="Nhập để tìm...">
 
+                    <div id="search-result" class="search-result"></div>
+                </div>
                 <div class="menu-cart">
                     <a href="/THAYTRINH/modules/cart.php" class="button-cart link">
                         <i class="fa-solid fa-cart-shopping"></i>
 
                         <?php
                         $dem = 0;
+
                         if(isset($_SESSION['sl_them_vao_gio'])){
                             foreach($_SESSION['sl_them_vao_gio'] as $sl){
                                 $dem += $sl;
                             }
                         }
-
-                        echo "<span id='cart-count' class='cart-count'>$dem</span>";
                         ?>
+
+                        <span id="cart-count" class="cart-count" 
+                        style="<?php if($dem == 0) echo 'display:none'; ?>">
+                        <?php echo $dem; ?>
+                        </span>
                     </a>
                 </div>
                 <div class="menu-login">
-                    <button class="button-login" >
+
+                    <button class="button-login">
                         <i class="fa-solid fa-bars"></i>
                     </button>
-                        <ul class="dropdown-menu-login">
-                            <li><a class="link" href="">Đăng ký</a></li>
-                            <li><a class="link" href="">Đăng nhập</a></li>
-                        </ul>
+
+                    <ul class="dropdown-menu-login">
+
+                        <?php if (!isset($_SESSION['IDNguoiDung'])) { ?>
+
+                            <li><a class="link" href="/THAYTRINH/modules/login.php">Đăng nhập</a></li>
+                            <li><a class="link" href="/THAYTRINH/modules/register.php">Đăng ký</a></li>
+
+                        <?php } else { ?>
+
+                            <li>
+                                <a class="link" href="/THAYTRINH/modules/profile.php">
+                                    <i class="fa-solid fa-user"></i> <?php echo $_SESSION['HoTen']; ?>
+                                </a>
+                            </li>
+
+                            <li><a class="link" href="/THAYTRINH/modules/logout.php"> <i class="fa-solid fa-right-to-bracket"> </i> Đăng xuất</a></li>
+
+                        <?php } ?>
+
+                    </ul>
+
                 </div>
             </div>
         </div>
