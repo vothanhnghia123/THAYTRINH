@@ -11,7 +11,7 @@
 ?>
 
 <div class="hienthi">
-    <table class="table-danhmuc">
+    <table class="table-lietke">
         <tr>
             <th>ID</th>
             <th>Tên thể loại</th>
@@ -28,14 +28,13 @@
                     <td><?php echo $row["TenTheLoai"]; ?></td>
                     <td><?php echo $row["TenDanhMuc"]; ?></td>
                     <td>
-                        <a onclick="return confirm('Bạn có chắc muốn xóa thể loại này không?')" 
-                           href="modules/theloai/xuly.php?xoa=1&id=<?php echo $row["IDTheLoai"]; ?>">
-                           Xóa
+                        <a onclick="return confirm('Bạn có chắc muốn xóa?')" 
+                            href="modules/theloai/xuly.php?xoa=1&id=<?php echo $row['IDTheLoai']; ?>">
+                            Xóa
                         </a>
-                    </td>
-                    <td>
+                        |
                         <a href="index.php?ql=qltheloai&ac=sua&id=<?php echo $row['IDTheLoai']; ?>">
-                        Sửa
+                            Sửa
                         </a>
                     </td>
                 </tr>

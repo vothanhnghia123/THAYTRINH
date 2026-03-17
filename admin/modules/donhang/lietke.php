@@ -8,7 +8,7 @@
 ?>
 
 <div class="hienthi">
-    <table class="table-danhmuc">
+    <table class="table-lietke">
         <tr>
             <th>ID Đơn</th>
             <th>ID Người dùng</th>

@@ -7,7 +7,7 @@
 ?>
 
 <div class="hienthi">
-    <table class="table-danhmuc">
+    <table class="table-lietke">
         <tr>
             <th>ID</th>
             <th>Tên tác giả</th>
@@ -25,15 +25,15 @@
                     <td style="max-width:300px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
                         <?php echo $row['TieuSu']; ?>
                     </td>
+                    
                     <td>
                         <a onclick="return confirm('Bạn có chắc muốn xóa?')" 
-                           href="modules/tacgia/xuly.php?xoa=1&id=<?php echo $row['IDTacGia']; ?>">
-                           Xóa
+                            href="modules/tacgia/xuly.php?xoa=1&id=<?php echo $row['IDTacGia']; ?>">
+                            Xóa
                         </a>
-                    </td>
-                    <td>
+                        |
                         <a href="index.php?ql=qltacgia&ac=sua&id=<?php echo $row['IDTacGia']; ?>">
-                           Sửa
+                            Sửa
                         </a>
                     </td>
                 </tr>

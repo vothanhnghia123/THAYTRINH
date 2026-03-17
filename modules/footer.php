@@ -15,7 +15,7 @@
         <div class="footer-col">
             <h3>Thông tin</h3>
             <ul>
-                <li><a href="#">Giới thiệu</a></li>
+                <li><a class="link" href="/THAYTRINH/gioithieu.php">Giới thiệu</a></li>
                 <li><a href="#">Cửa hàng</a></li>
                 <li><a href="#">Blog sách</a></li>
                 <li><a href="#">Liên hệ</a></li>

@@ -51,6 +51,21 @@ if(isset($_GET['giam'])){
 }
 mysqli_set_charset($connect,"utf8");
 ?>
+<!-- dat hang -->
+ <?php
+$thieuThongTin = false;
+
+if(isset($_SESSION['IDNguoiDung'])){
+    $id = $_SESSION['IDNguoiDung'];
+    $sql = "SELECT DienThoai, DiaChi FROM nguoidung WHERE IDNguoiDung='$id'";
+    $kq = mysqli_query($connect,$sql);
+    $u = mysqli_fetch_array($kq);
+
+    if(empty($u['DienThoai']) || empty($u['DiaChi'])){
+        $thieuThongTin = true;
+    }
+}
+?>
 
 <!DOCTYPE html>
 <html lang="vi">
@@ -67,6 +82,22 @@ mysqli_set_charset($connect,"utf8");
 	<?php
 		include('header.php');
 	?>
+    <?php if(isset($_GET['success'])){ ?>
+        <div style="
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background: #d4edda;
+            color: #155724;
+            padding: 20px 40px;
+            border-radius: 10px;
+            font-size: 20px;
+            z-index: 9999;
+        ">
+            🎉 Đặt hàng thành công!
+        </div>
+        <?php } ?>
 	<?php
 		if (isset($_GET['added'])) {
 	?>
@@ -212,32 +243,40 @@ mysqli_set_charset($connect,"utf8");
     </div>
 
     <div class="cart-right">
-        <h3 style="margin-top: 0; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 10px;">Thông tin nhận hàng</h3>
-        <form action="DatHang.php" method="post">
-            <label>Họ và tên *</label>
-            <input type="text" name="ten" placeholder="Nhập tên người nhận" required>
+        <h3 style="margin-top: 0; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 10px;">
+            ĐẶT HÀNG
+        </h3>
 
-            <label>Số điện thoại *</label>
-            <input type="text" name="sdt" placeholder="Ví dụ: 0912345xxx" required>
+        <form action="<?php echo $thieuThongTin ? 'luu_diachi.php' : 'DatHang.php'; ?>" method="post">
 
-            <label>Email</label>
-            <input type="email" name="email" placeholder="email@example.com">
-
-            <label>Địa chỉ giao hàng *</label>
-            <input type="text" name="diachi" placeholder="Số nhà, tên đường, phường/xã..." required>
-
+            <!-- LUÔN HIỆN -->
             <label>Phương thức thanh toán</label>
-            <select name="thanhtoan">
+            <select name="thanhtoan" class="form-control mb-2">
                 <option value="COD">Thanh toán khi nhận hàng (COD)</option>
                 <option value="ATM">Chuyển khoản ngân hàng</option>
             </select>
-			<div class="checkout-total">
-				Tổng thanh toán
-				<span id="tong-tien">
-					<?php echo number_format($tong_cong,0,",","."); ?> VNĐ
-				</span>
-			</div>
-            <button type="submit" class="btn-pay">HOÀN TẤT ĐẶT HÀNG</button>
+
+            <!-- NẾU THIẾU INFO -->
+            <?php if($thieuThongTin){ ?>
+                <div style="color:red; margin-bottom:10px;">
+                    ⚠ Bạn chưa nhập thông tin nhận hàng
+                </div>
+
+                <input type="text" name="sdt" placeholder="Số điện thoại" required class="form-control mb-2">
+                <input type="text" name="diachi" placeholder="Địa chỉ" required class="form-control mb-2">
+            <?php } ?>
+
+            <!-- LUÔN HIỆN -->
+            <div class="checkout-total">
+                Tổng thanh toán
+                <span id="tong-tien">
+                    <?php echo number_format($tong_cong,0,",","."); ?> VNĐ
+                </span>
+            </div>
+
+            <button type="submit" class="btn btn-success w-100">
+                HOÀN TẤT ĐẶT HÀNG
+            </button>
         </form>
     </div>
 </div>

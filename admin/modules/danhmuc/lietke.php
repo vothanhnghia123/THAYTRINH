@@ -7,7 +7,7 @@ $load_danhmuc = mysqli_query($connect,$sql_danhmuc);
 ?>
 
 <div class="hienthi">
-<table class="table-danhmuc">
+<table class="table-lietke">
 
 <tr>
     <th>ID</th>
@@ -26,14 +26,14 @@ $load_danhmuc = mysqli_query($connect,$sql_danhmuc);
          <td><?php echo $row["TenDanhMuc"]; ?></td>
 
     <td>
-        <a onclick="return confirm('Bạn có chắc muốn xóa danh mục này không?')" 
-            href="modules/danhmuc/xuly.php?xoa=1&id=<?php echo $row["IDDanhMuc"]; ?>">
+        <a onclick="return confirm('Bạn có chắc muốn xóa?')" 
+            href="modules/danhmuc/xuly.php?xoa=1&id=<?php echo $row['IDDanhMuc']; ?>">
             Xóa
         </a>
-    </td>
-
-    <td>
-        <a href="index.php?ql=qldanhmuc&ac=sua&id=<?php echo $row['IDDanhMuc']; ?>">Sửa</a>
+        |
+        <a href="index.php?ql=qldanhmuc&ac=sua&id=<?php echo $row['IDDanhMuc']; ?>">
+            Sửa
+        </a>
     </td>
 </tr>
 

@@ -4,39 +4,47 @@
             <div class="nav-link">
                 <ul class="list-link">
                     <li><a class="link" href="/THAYTRINH/index.php">Trang chủ</a></li>
-                    <li><a class="link" href="">Giới thiệu</a></li>
+                    <li><a class="link" href="/THAYTRINH/gioithieu.php">Giới thiệu</a></li>
                     <li class="dropdown">
                         <a class="link" href="">Thể loại</a>
+
                         <div class="mega-menu">
-                            <!-- cột 1 -->
+
+                            <?php
+                            $sql_dm = "SELECT * FROM danhmuc";
+                            $query_dm = mysqli_query($connect, $sql_dm);
+
+                            while($dm = mysqli_fetch_assoc($query_dm)){
+                            ?>
+
                             <div class="column">
-                                
-                                <a class="column-link" href="">Tiểu thuyết</a>
+
+                                <!-- danh mục -->
+                                <a class="link" href="/THAYTRINH/modules/sanpham.php?danhmuc=<?php echo $dm['IDDanhMuc']; ?>">
+                                    <?php echo $dm['TenDanhMuc']; ?>
+                                </a>
+
                                 <ul>
-                                    <li><a href="">Ngôn tình</a></li>
-                                    <li><a href="">Kiếm hiệp</a></li>
-                                    <li><a href="">Trinh thám</a></li>
+                                    <?php
+                                    $id_dm = $dm['IDDanhMuc'];
+                                    $sql_tl = "SELECT * FROM theloai WHERE IDDanhMuc='$id_dm'";
+                                    $query_tl = mysqli_query($connect, $sql_tl);
+
+                                    while($tl = mysqli_fetch_assoc($query_tl)){
+                                    ?>
+
+                                    <li>
+                                        <a class="link" href="/THAYTRINH/modules/sanpham.php?theloai=<?php echo $tl['IDTheLoai']; ?>">
+                                            <?php echo $tl['TenTheLoai']; ?>
+                                        </a>
+                                    </li>
+
+                                    <?php } ?>
                                 </ul>
+
                             </div>
 
-                            <!-- cột 2 -->
-                            <div class="column">
-                                
-                                <a class="column-link" href="">Khoa học</a>
-                                <ul>
-                                    <li><a href="">Vũ trụ</a></li>
-                                    <li><a href="">Sinh học</a></li>
-                                </ul>
-                            </div>
-
-                            <!-- cột 3 -->
-                            <div class="column">
-                                <a class="column-link" href="">Truyện tranh</a>
-                                <ul>
-                                    <li><a href="">Manga</a></li>
-                                    <li><a href="">Manhwa</a></li>
-                                </ul>
-                            </div>
+                            <?php } ?>
 
                         </div>
                     </li>

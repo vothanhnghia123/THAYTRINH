@@ -7,7 +7,7 @@ $result = mysqli_query($connect, $sql);
 ?>
 
 <div class="hienthi">
-    <table class="table-danhmuc">
+    <table class="table-lietke">
         <tr>
             <th>ID</th>
             <th>Họ tên</th>

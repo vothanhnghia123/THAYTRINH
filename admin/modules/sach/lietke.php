@@ -8,18 +8,20 @@
         LEFT JOIN theloai ON sach.IDTheLoai = theloai.IDTheLoai
         LEFT JOIN nhaxuatban ON sach.IDNXB = nhaxuatban.IDNXB
         LEFT JOIN tacgia ON sach.IDTacGia = tacgia.IDTacGia
+        ORDER BY sach.IDSach DESC
     ";
 
     $result = mysqli_query($connect, $sql);
 ?>
 
-<table class="table-danhmuc">
+<table class="table-lietke">
     <tr>
         <th>ID</th>
         <th>Tên sách</th>
         <th>Thể loại</th>
         <th>NXB</th>
         <th>Tác giả</th>
+        <th>Số lượng</th>
         <th>Giá</th>
         <th>Năm XB</th>
         <th>Hình</th>
@@ -37,6 +39,7 @@
                 <td><?php echo $row['TenTheLoai']; ?></td>
                 <td><?php echo $row['TenNXB']; ?></td>
                 <td><?php echo $row['TenTacGia']; ?></td>
+                <td><?php echo $row['SoLuong']; ?></td>
                 <td><?php echo number_format($row['GiaBan'], 0, ",", "."); ?> VNĐ</td>
                 <td><?php echo $row['NamXB']; ?></td>
                 <td>

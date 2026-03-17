@@ -7,7 +7,7 @@ $load_nxb = mysqli_query($connect,$sql_nxb);
 ?>
 
 <div class="hienthi">
-<table class="table-danhmuc">
+<table class="table-lietke">
 
 <tr>
     <th>ID</th>
@@ -32,15 +32,13 @@ if(mysqli_num_rows($load_nxb) > 0){
     <td><?php echo $row["DienThoai"]; ?></td>
 
     <td>
-        <a onclick="return confirm('Bạn có chắc muốn xóa nhà xuất bản này không?')" 
-        href="modules/nhaxuatban/xuly.php?xoa=1&id=<?php echo $row['IDNXB']; ?>">
-        Xóa
+        <a onclick="return confirm('Bạn có chắc muốn xóa?')" 
+            href="modules/nhaxuatban/xuly.php?xoa=1&id=<?php echo $row['IDNXB']; ?>">
+            Xóa
         </a>
-    </td>
-
-    <td>
+        |
         <a href="index.php?ql=qlnhaxuatban&ac=sua&id=<?php echo $row['IDNXB']; ?>">
-        Sửa
+            Sửa
         </a>
     </td>
 

@@ -14,7 +14,7 @@
 ?>
 
 <div class="hienthi">
-    <table class="table-danhmuc">
+    <table class="table-lietke">
         <tr>
             <th>ID CTĐH</th>
             <th>ID Đơn</th>

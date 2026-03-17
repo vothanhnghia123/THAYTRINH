@@ -9,35 +9,34 @@ $load_sach = mysqli_query($connect,$sql_sach);
 
 <div class="sales">
   <div class="container sales-product">
+    <div class="box-white">
+      <h3 class="title-sale">SÁCH GỢI Ý</h3>
+      <div class="product-item">
 
-    <h3 class="title-sale">SÁCH GỢI Ý</h3>
+        <?php while($row = mysqli_fetch_array($load_sach)) { ?>
 
-    <div class="product-item">
+        <a class="item-sales" href="singleproduct.php?id=<?php echo $row['IDSach']; ?>">
 
-      <?php while($row = mysqli_fetch_array($load_sach)) { ?>
+          <img class="product-image"
+          src="admin/modules/sach/upload/<?php echo $row['HinhAnh']; ?>">
 
-      <a class="item-sales" href="singleproduct.php?id=<?php echo $row['IDSach']; ?>">
+          <div class="product-detail">
 
-        <img class="product-image"
-        src="admin/modules/sach/upload/<?php echo $row['HinhAnh']; ?>">
+            <h4 class="product-title">
+              <?php echo $row['TenSach']; ?>
+            </h4>
 
-        <div class="product-detail">
+            <p class="price">
+              <?php echo number_format($row['GiaBan'],0,",","."); ?> đ
+            </p>
 
-          <h4 class="product-title">
-            <?php echo $row['TenSach']; ?>
-          </h4>
+          </div>
 
-          <p class="price">
-            <?php echo number_format($row['GiaBan'],0,",","."); ?> đ
-          </p>
+        </a>
 
-        </div>
+        <?php } ?>
 
-      </a>
-
-      <?php } ?>
-
+      </div>
     </div>
-
   </div>
 </div>

@@ -73,9 +73,15 @@ $page = isset($_GET['page']) ? $_GET['page'] : "info";
     <meta charset="UTF-8">
     <title>Thông tin người dùng</title>
     <link rel="stylesheet" href="../css/style.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
+    <?php 
+        include('header.php');
+    ?>
 
     <div class="profile-container">
 
@@ -89,9 +95,9 @@ $page = isset($_GET['page']) ? $_GET['page'] : "info";
 
         <a href="profile.php?page=info" class="btn">Thông tin</a>
 
-        <a href="profile.php?page=password" class="btn">Đổi mật khẩu</a>
-
         <a href="profile.php?page=orders" class="btn">Đơn hàng của tôi</a>
+
+        <a href="profile.php?page=password" class="btn">Đổi mật khẩu</a>
 
         <a href="logout.php" class="btn logout">Đăng xuất</a>
 

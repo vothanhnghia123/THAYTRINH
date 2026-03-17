@@ -125,7 +125,7 @@
     margin: 40px auto;
 }
 
-.table-danhmuc{
+.table-lietke{
     width: 100%;
     border-collapse: collapse;
     font-family: Arial, sans-serif;
@@ -133,7 +133,7 @@
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.table-danhmuc th{
+.table-lietke th{
     background: white;
     color: black;
     padding: 12px;
@@ -141,33 +141,39 @@
     font-size: 18px;
 }
 
-.table-danhmuc td{
+.table-lietke td{
     padding: 12px;
     border-bottom: 1px solid #ddd;
     text-align: center;
 }
 
-.table-danhmuc tr:hover{
+.table-lietke tr:hover{
     background: #f5f5f5;
 }
 
-.table-danhmuc a{
+.table-lietke a{
     text-decoration: none;
     padding: 6px 12px;
     border-radius: 4px;
     font-weight: bold;
 }
 
-.table-danhmuc a:first-child{
+.table-lietke a:first-child{
     background: #e74c3c;
     color: white;
 }
 
-.table-danhmuc a:last-child{
+.table-lietke a:last-child{
     background: #3498db;
     color: white;
 }
 
-.table-danhmuc a:hover{
+.table-lietke a:hover{
     opacity: 0.8;
+}
+.table-lietke td:nth-child(2){
+    max-width: 250px;      /* chỉnh độ rộng tùy ý */
+    white-space: nowrap;   /* không xuống dòng */
+    overflow: hidden;      
+    text-overflow: ellipsis; /* hiện ... */
 }

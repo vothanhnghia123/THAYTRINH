@@ -12,7 +12,7 @@ $result = mysqli_query($connect, $sql);
 ?>
 
 <div class="hienthi">
-    <table class="table-danhmuc">
+    <table class="table-lietke">
         <tr>
             <th>ID Đánh giá</th>
             <th>Sách</th>
