@@ -10,7 +10,7 @@
     <form action="modules/theloai/xuly.php" method="post">
 
         <div class="admin-form-title">
-            Form dữ liệu
+            Thêm Thể Loại
         </div>
 
         <div class="admin-form-group">

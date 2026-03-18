@@ -183,3 +183,39 @@ td:last-child {
     overflow: hidden;      
     text-overflow: ellipsis; /* hiện ... */
 }
+/*trang chu*/
+.dashboard {
+    padding: 20px;
+}
+
+.dashboard h2 {
+    margin-bottom: 20px;
+}
+
+/* grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* card */
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* số */
+.number {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff6600;
+    margin-top: 10px;
+}

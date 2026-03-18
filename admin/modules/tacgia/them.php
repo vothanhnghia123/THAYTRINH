@@ -2,7 +2,7 @@
     <form action="modules/tacgia/xuly.php" method="post">
 
         <div class="admin-form-title">
-            Form dữ liệu Tác Giả
+           Thêm Tác Giả
         </div>
 
         <div class="admin-form-group">

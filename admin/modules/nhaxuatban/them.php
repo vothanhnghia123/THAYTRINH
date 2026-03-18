@@ -2,7 +2,7 @@
     <form action="modules/nhaxuatban/xuly.php" method="post">
 
         <div class="admin-form-title">
-            Form dữ liệu Nhà Xuất Bản
+            Thêm Nhà Xuất Bản
         </div>
 
         <div class="admin-form-group">

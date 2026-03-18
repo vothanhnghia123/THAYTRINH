@@ -2,7 +2,7 @@
     <form action="modules/danhmuc/xuly.php" method="post" enctype="multipart/form-data">
 
         <div class="admin-form-title">
-            Form dữ liệu
+            Thêm Danh Mục
         </div>
 
         <div class="admin-form-group">
