@@ -83,21 +83,20 @@ if(isset($_SESSION['IDNguoiDung'])){
 		include('header.php');
 	?>
     <?php if(isset($_GET['success'])){ ?>
-        <div style="
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            background: #d4edda;
-            color: #155724;
-            padding: 20px 40px;
-            border-radius: 10px;
-            font-size: 20px;
-            z-index: 9999;
-        ">
+        <div id="success-box">
             🎉 Đặt hàng thành công!
         </div>
         <?php } ?>
+        <script>
+            setTimeout(function(){
+                let box = document.getElementById("success-box");
+                if(box){
+                    box.style.transition = "0.5s";
+                    box.style.opacity = "0";
+                    setTimeout(() => box.remove(), 500); // xóa hẳn
+                }
+            }, 3000); // 5 giây
+            </script>
 	<?php
 		if (isset($_GET['added'])) {
 	?>
@@ -204,7 +203,7 @@ if(isset($_SESSION['IDNguoiDung'])){
 						data-price="<?php echo $tien; ?>"
 						checked>
 
-					<img src="../admin/modules/sach/upload/<?php echo $rows['HinhAnh']; ?>" class="cart-img">
+					<img src="/THAYTRINH/image/sach/<?php echo $rows['HinhAnh']; ?>" class="cart-img">
 
 					<div class="cart-info">
 						<h4 class="book-name"><?php echo $rows['TenSach']; ?></h4>
@@ -274,7 +273,7 @@ if(isset($_SESSION['IDNguoiDung'])){
                 </span>
             </div>
 
-            <button type="submit" class="btn btn-success w-100">
+            <button type="submit" class="btn btn-success w-100" onclick="return checkLogin();">
                 HOÀN TẤT ĐẶT HÀNG
             </button>
         </form>
@@ -311,6 +310,17 @@ cb.checked = this.checked;
 tinhTien();
 
 });
+</script>
+<!-- kt đằng  -->
+<script>
+function checkLogin(){
+    <?php if(!isset($_SESSION['IDNguoiDung'])){ ?>
+        alert("⚠ Vui lòng đăng nhập hoặc đăng ký để đặt hàng!");
+        window.location.href = "login.php";
+        return false;
+    <?php } ?>
+    return true;
+}
 </script>
 </body>
 </html>

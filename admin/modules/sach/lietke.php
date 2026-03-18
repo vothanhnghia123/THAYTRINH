@@ -43,7 +43,7 @@
                 <td><?php echo number_format($row['GiaBan'], 0, ",", "."); ?> VNĐ</td>
                 <td><?php echo $row['NamXB']; ?></td>
                 <td>
-                    <img src="modules/sach/upload/<?php echo $row['HinhAnh']; ?>" width="60" alt="Hình sách">
+                    <img src="/THAYTRINH/image/sach/<?php echo $row['HinhAnh']; ?>" width="60" alt="Hình sách">
                 </td>
                 <td>
                     <a onclick="return confirm('Bạn có chắc muốn xóa?')" 

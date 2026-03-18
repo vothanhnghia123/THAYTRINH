@@ -57,7 +57,7 @@
                 <div class="row">
                     <div class="col-md-5">
                         <img class="product-img img-fluid" 
-                             src="admin/modules/sach/upload/<?php echo $row['HinhAnh']; ?>" 
+                             src="/THAYTRINH/image/sach/<?php echo $row['HinhAnh']; ?>" 
                              alt="<?php echo $row['TenSach']; ?>" 
                              style="width: 100%; border: 1px solid #eee; border-radius: 8px;">
                     </div>

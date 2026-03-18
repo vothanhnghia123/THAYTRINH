@@ -85,6 +85,6 @@ unset($_SESSION['id_them_vao_gio']);
 unset($_SESSION['sl_them_vao_gio']);
 
 // 4. Chuyển trang
-header("Location: cart.php");
+header("Location: cart.php?success=1");
 exit();
 ?>

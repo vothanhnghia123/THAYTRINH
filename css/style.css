@@ -633,9 +633,12 @@ text-align:left;
     line-height: 1.4;
     margin-bottom: 8px;
 
+/* Hiệu ứng dấu ... */
     display: -webkit-box;
+    -webkit-line-clamp: 2; /* này có cảnh báo ko sao*/
     -webkit-box-orient: vertical;
     overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* PRICE */
@@ -655,17 +658,248 @@ text-align:left;
 /* nền ngoài */
 .sales{
     background: #f3f3f3;
-    padding: 30px 0;
+    padding: 5px 0;
 }
 
 /* khung trắng */
 .box-white{
     background: #fff;
-    border-radius: 20px;
+    border-radius: 15px;
     padding: 25px;
 }
 
+/* xem thêm*/
+.view-more {
+    text-align: center;
+    margin-top: 20px;
+}
 
+.btn-view-more {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1px solid #ff6600;
+    color: #ff6600;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn-view-more:hover {
+    background: #ff6600;
+    color: #fff;
+}
+/* ===== SLIDER RIÊNG (sách mới ) ===== */
+/* Khung bao ngoài cùng */
+.book-carousel-section {
+    background: #f5f5f5;
+    padding: 30px 0;
+}
+
+.book-carousel-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.book-carousel-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Wrapper để định vị nút bấm */
+.book-carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Container chứa các item - Quan trọng để lướt ngang */
+.book-carousel-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 15px;
+    padding: 10px 5px;
+    /* Ẩn thanh cuộn */
+    scrollbar-width: none; /* Firefox */
+}
+
+.book-carousel-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+}
+
+/* Item sản phẩm */
+.book-carousel-item {
+    flex: 0 0 calc(20% - 12px); /* Hiển thị 5 sản phẩm */
+    min-width: 190px;
+    background: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #333;
+    transition: 0.3s;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-carousel-item:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+}
+
+/* Ảnh sản phẩm */
+.book-card-img img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Thông tin chữ */
+.book-card-info {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.book-title {
+    font-size: 14px;
+    margin-bottom: 8px;
+    height: 40px; /* Cố định chiều cao để các card đều nhau */
+    line-height: 20px; /* Chiều cao mỗi dòng */
+    
+    /* Hiệu ứng 2 dòng hiện dấu ... */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Số dòng muốn hiển thị rồi ẩn  (này có cảnh báo ko sao) */ 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+}
+
+.book-price {
+    color: #d70018;
+    font-weight: bold;
+    margin-top: auto;
+}
+
+/* Nút bấm điều hướng */
+.book-carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+    z-index: 5;
+    transition: 0.3s;
+}
+
+.book-carousel-btn:hover {
+    background: #ff6600;
+    color: #fff;
+    border-color: #ff6600;
+}
+
+.btn-prev { left: -18px; }
+.btn-next { right: -18px; }
+/**/
+/* ===== SIDEBAR ===== */
+.sidebar {
+    background: #fff;
+    padding: 12px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+/* tạo khoảng cách giữa 2 bên */
+.content-right {
+    padding-left: 20px;
+    padding-top: 10px;
+}
+.content-right h4 {
+        text-align: center;
+}
+.menu-left {
+    list-style: none;
+    padding: 0;
+}
+/* chữ nhỏ lại cho gọn */
+.menu-left a {
+    font-size: 14px;
+    padding: 6px;
+}
+.menu-left li {
+    margin-bottom: 8px;
+}
+
+.menu-left a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.menu-left a:hover {
+    background: #f5f5f5;
+    color: red;
+}
+/* trang san pham*/
+.page-sanpham {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 sản phẩm / hàng */
+    gap: 20px;
+}
+/* ===== PAGINATION ===== */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.pagination a,
+.pagination span {
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    color: #333;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* hover */
+.pagination a:hover {
+    background: #f5f5f5;
+    border-color: #999;
+}
+
+/* active page */
+.pagination span {
+    background: #dc3545; 
+    color: #fff;
+    border: none;
+    font-weight: bold;
+}
+
+/* nút prev next */
+.pagination a:first-child,
+.pagination a:last-child {
+    font-weight: bold;
+}
 
 /*footer*/
 .footer{
@@ -733,7 +967,34 @@ text-align:left;
     padding-top:20px;
     color:#aaa;
 }
+/* trang chi tiết*/
+.col-md-10{
+        background: #fff;
+        border-radius: 10px;
+}
+/* submenu (thể loại) */
+.submenu {
+    padding-left: 15px;
+}
 
+.submenu li {
+    margin: 5px 0;
+}
+
+.submenu a {
+    font-size: 13px;
+    color: #666;
+}
+
+.submenu a:hover {
+    color: red;
+}
+
+/* hiệu ứng click danh mục */
+.menu-left > li > a {
+    font-weight: 500;
+    cursor: pointer;
+}
 /* ===========giỏ hàng*/
 .cart-container{
 display:flex;
@@ -933,6 +1194,20 @@ font-weight:bold;
 width:18px;
 height:18px;
 }
+
+/* thong bao dat hang*/
+#success-box{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #d4edda;
+    color: #155724;
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-size: 20px;
+    z-index: 9999;
+}
 /**/
 /* ===== ABOUT PAGE ===== */
 
@@ -997,3 +1272,4 @@ height:18px;
     transform: translateY(-3px);
     transition: 0.3s;
 }
+/* san pham mo*/

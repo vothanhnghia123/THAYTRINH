@@ -32,9 +32,12 @@
     display: flex;
     justify-content: center;   /* căn giữa ngang */
     align-items: center;
-    gap: 35px;                 /* khoảng cách giữa các mục */
+    gap: 30px;                 /* khoảng cách giữa các mục */
     background: #f2f2f2;
     padding: 15px 0; 
+
+    flex-wrap: nowrap;   /* QUAN TRỌNG: không cho xuống dòng */
+    overflow-x: auto; 
 }
 
 /* link */
@@ -46,6 +49,7 @@
     font-size:15px;
     transition:0.3s;
     font-weight:bold;
+    white-space: nowrap;
 }
 
 /* hover */
@@ -124,7 +128,9 @@
     width: 80%;
     margin: 40px auto;
 }
-
+td:last-child {
+    white-space: nowrap;
+}
 .table-lietke{
     width: 100%;
     border-collapse: collapse;

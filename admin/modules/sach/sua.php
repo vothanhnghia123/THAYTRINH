@@ -90,7 +90,7 @@
             <label>Hình ảnh hiện tại</label>
             <input class="admin-input" type="file" name="hinhanh">
             <div style="margin-top: 10px;">
-                <img src="modules/sach/upload/<?php echo $row['HinhAnh']; ?>" width="80" style="border: 1px solid #ddd;">
+                <img src="/THAYTRINH/image/sach/<?php echo $row['HinhAnh']; ?>" width="80" style="border: 1px solid #ddd;">
             </div>
         </div>
 

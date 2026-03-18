@@ -20,7 +20,14 @@
     <main>
         <div class="main">
             <?php 
+                include('modules/newbook.php');
+
+                include('modules/vanhoc.php');
+
+                include('modules/thieunhi.php');
+
                 include('modules/product.php');
+                
             ?>
 
         </div>

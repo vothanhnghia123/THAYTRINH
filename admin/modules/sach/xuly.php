@@ -20,7 +20,7 @@
     # ================= THÊM =================
 if (isset($_POST['them'])) {
 
-    if(!empty($_FILES['hinhanh']['name'])){
+    if(isset($_FILES['hinhanh']) && $_FILES['hinhanh']['error'] == 0){
 
         $hinhanh = time().'_'.$_FILES['hinhanh']['name'];
         $tmp = $_FILES['hinhanh']['tmp_name'];
@@ -33,7 +33,8 @@ if (isset($_POST['them'])) {
                 exit();
             }
 
-        move_uploaded_file($tmp,"modules/sach/upload/".$hinhanh);
+        $duongdan = $_SERVER['DOCUMENT_ROOT'] . "/THAYTRINH/image/sach/";
+        move_uploaded_file($tmp, $duongdan.$hinhanh);
     } else {
         $hinhanh = ""; // hoặc ảnh mặc định
     }
@@ -47,24 +48,33 @@ if (isset($_POST['them'])) {
 
     # ================= XÓA =================
     else if (isset($_GET['xoa'])) {
-        $id = $_GET['id'];
-        
-        // (Tùy chọn) Thêm code xóa file ảnh vật lý trong thư mục uploads tại đây nếu muốn sạch host
-        
-        $sql = "DELETE FROM sach WHERE IDSach='$id'";
-        mysqli_query($connect, $sql);
-        header("location:../../index.php?ql=qlsach&ac=them");
+    $id = $_GET['id'];
+
+    $duongdan = $_SERVER['DOCUMENT_ROOT'] . "/THAYTRINH/image/sach/";
+
+    // lấy ảnh cũ
+    $sql_old = "SELECT HinhAnh FROM sach WHERE IDSach='$id'";
+    $query_old = mysqli_query($connect,$sql_old);
+    $row_old = mysqli_fetch_assoc($query_old);
+
+    // xóa file
+    if(!empty($row_old['HinhAnh']) && file_exists($duongdan.$row_old['HinhAnh'])){
+        unlink($duongdan.$row_old['HinhAnh']);
+    }
+
+    // xóa DB
+    $sql = "DELETE FROM sach WHERE IDSach='$id'";
     }
 
     # ================= SỬA =================
     else if(isset($_POST['sua'])){
 
     $id = $_GET['id'];
-    $duongdan = __DIR__ . "/upload/";
+    $duongdan = $_SERVER['DOCUMENT_ROOT'] . "/THAYTRINH/image/sach/";
 
     if(!empty($_FILES['hinhanh']['name'])){
 
-        $hinhanh = $_FILES['hinhanh']['name'];
+        $hinhanh = time().'_'.$_FILES['hinhanh']['name'];
         $tmp = $_FILES['hinhanh']['tmp_name'];
 
         $allow = ['jpg','png','jpeg'];
