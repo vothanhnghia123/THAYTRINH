@@ -46,9 +46,9 @@ $result_feedback = mysqli_query($connect, $sql_feedback);
             <p>
                 Chỉ có thành viên mới có thể viết nhận xét.
                 Vui lòng 
-                <a href="login.php">đăng nhập</a> 
+                <a href="/THAYTRINH/modules/login.php">đăng nhập</a> 
                 hoặc 
-                <a href="register.php">đăng ký</a>.
+                <a href="/THAYTRINH/modules/login.php">đăng ký</a>
             </p>
         </div>
 
