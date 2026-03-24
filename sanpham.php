@@ -1,5 +1,5 @@
 <?php
-include("../config.php");
+include("config.php");
 
 $title = "";
 
@@ -64,7 +64,7 @@ $query = mysqli_query($connect,$sql);
 
 <body>
 
-<?php include('header.php'); ?>
+<?php include('modules/header.php'); ?>
 <div class="sales">
     <div class="container mt-3">
         <div class="row">
@@ -144,7 +144,7 @@ $query = mysqli_query($connect,$sql);
                 <?php if(mysqli_num_rows($query) > 0){ ?>
                     <?php while($row = mysqli_fetch_assoc($query)){ ?>
 
-                    <a class="item-sales" href="../singleproduct.php?id=<?php echo $row['IDSach']; ?>">
+                    <a class="item-sales" href="singleproduct.php?id=<?php echo $row['IDSach']; ?>">
 
                         <img class="product-image"
                         src="/THAYTRINH/image/sach/<?php echo $row['HinhAnh']; ?>">
@@ -175,21 +175,42 @@ $query = mysqli_query($connect,$sql);
                         $param = "&theloai=".$_GET['theloai'];
                     }
 
-                    if ($current_page > 1){
-                        echo '<a class="page-btn" href="?page='.($current_page-1).$param.'">«</a>';
-                    }
+                        $range = 2;
 
-                    for ($i = 1; $i <= $total_page; $i++){
-                        if ($i == $current_page){
-                            echo '<span class="active">'.$i.'</span>';
-                        } else {
-                            echo '<a class="page-btn" href="?page='.$i.$param.'">'.$i.'</a>';
+                        // Prev
+                        if ($current_page > 1){
+                            echo '<a class="page-btn" href="?page='.($current_page-1).$param.'">«</a>';
                         }
-                    }
 
-                    if ($current_page < $total_page){
-                        echo '<a class="page-btn" href="?page='.($current_page+1).$param.'">»</a>';
-                    }
+                        // Trang đầu
+                        if ($current_page > $range + 1){
+                            echo '<a class="page-btn" href="?page=1'.$param.'">1</a>';
+                            if ($current_page > $range + 2){
+                                echo '<span class="page-btn">...</span>'; // vẫn dùng class cũ
+                            }
+                        }
+
+                        // Các trang xung quanh
+                        for ($i = max(1, $current_page - $range); $i <= min($total_page, $current_page + $range); $i++){
+                            if ($i == $current_page){
+                                echo '<span class="active">'.$i.'</span>';
+                            } else {
+                                echo '<a class="page-btn" href="?page='.$i.$param.'">'.$i.'</a>';
+                            }
+                        }
+
+                        // Trang cuối
+                        if ($current_page < $total_page - $range){
+                            if ($current_page < $total_page - $range - 1){
+                                echo '<span class="page-btn">...</span>'; // giữ style cũ
+                            }
+                            echo '<a class="page-btn" href="?page='.$total_page.$param.'">'.$total_page.'</a>';
+                        }
+
+                        // Next
+                        if ($current_page < $total_page){
+                            echo '<a class="page-btn" href="?page='.($current_page+1).$param.'">»</a>';
+                        }
                     ?>
 
                 </div>

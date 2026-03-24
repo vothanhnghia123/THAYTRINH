@@ -20,7 +20,7 @@
                             <div class="column">
 
                                 <!-- danh mục -->
-                                <a class="link" href="/THAYTRINH/modules/sanpham.php?danhmuc=<?php echo $dm['IDDanhMuc']; ?>">
+                                <a class="link" href="/THAYTRINH/sanpham.php?danhmuc=<?php echo $dm['IDDanhMuc']; ?>">
                                     <?php echo $dm['TenDanhMuc']; ?>
                                 </a>
 
@@ -34,7 +34,7 @@
                                     ?>
 
                                     <li>
-                                        <a class="link" href="/THAYTRINH/modules/sanpham.php?theloai=<?php echo $tl['IDTheLoai']; ?>">
+                                        <a class="link" href="/THAYTRINH/sanpham.php?theloai=<?php echo $tl['IDTheLoai']; ?>">
                                             <?php echo $tl['TenTheLoai']; ?>
                                         </a>
                                     </li>

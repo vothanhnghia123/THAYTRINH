@@ -42,7 +42,7 @@ $tong_user = $row_user['tong'];
     <div class="dashboard">
 
     <h2>Trang Quản Trị</h2>
-
+       
     <div class="dashboard-grid">
 
         <!-- Doanh thu -->
@@ -78,7 +78,7 @@ $tong_user = $row_user['tong'];
         </div>
 
     </div>
-
+ <a href="../index.php" class="btn-home">← Về trang web</a>
 </div>
 </body>
 </html>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 20, 2026 lúc 10:22 AM
+-- Thời gian đã tạo: Th3 24, 2026 lúc 08:28 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -141,7 +141,7 @@ CREATE TABLE `nguoidung` (
   `MatKhau` varchar(255) NOT NULL,
   `DienThoai` varchar(15) DEFAULT NULL,
   `DiaChi` varchar(255) DEFAULT NULL,
-  `IDVaiTro` int(11) DEFAULT NULL
+  `IDVaiTro` int(11) DEFAULT 2
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -149,7 +149,9 @@ CREATE TABLE `nguoidung` (
 --
 
 INSERT INTO `nguoidung` (`IDNguoiDung`, `HoTen`, `Email`, `MatKhau`, `DienThoai`, `DiaChi`, `IDVaiTro`) VALUES
-(2, 'Võ Thành Nghĩa', 'vothanhnghia1503@gmail.com', 'b0baee9d279d34fa1dfd71aadb908c3f', '0337486120', 'An Thới Dông', NULL);
+(2, 'Võ Thành Nghĩa', 'vothanhnghia1503@gmail.com', 'b0baee9d279d34fa1dfd71aadb908c3f', '0337486120', 'An Thới Dông', 2),
+(3, 'Admin', 'admin@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '0123456789', 'Admin', 1),
+(4, 'nhân', 'nhan@gmail.com', 'b0baee9d279d34fa1dfd71aadb908c3f', NULL, NULL, 2);
 
 -- --------------------------------------------------------
 
@@ -323,6 +325,14 @@ CREATE TABLE `vaitro` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
+-- Đang đổ dữ liệu cho bảng `vaitro`
+--
+
+INSERT INTO `vaitro` (`IDVaiTro`, `TenVaiTro`) VALUES
+(1, 'admin'),
+(2, 'user');
+
+--
 -- Chỉ mục cho các bảng đã đổ
 --
 
@@ -428,7 +438,7 @@ ALTER TABLE `donhang`
 -- AUTO_INCREMENT cho bảng `nguoidung`
 --
 ALTER TABLE `nguoidung`
-  MODIFY `IDNguoiDung` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `IDNguoiDung` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `nhaxuatban`
@@ -458,7 +468,7 @@ ALTER TABLE `theloai`
 -- AUTO_INCREMENT cho bảng `vaitro`
 --
 ALTER TABLE `vaitro`
-  MODIFY `IDVaiTro` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IDVaiTro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

@@ -20,9 +20,15 @@ if (isset($_POST['login'])) {
 
         $_SESSION['IDNguoiDung'] = $row['IDNguoiDung'];
         $_SESSION['HoTen'] = $row['HoTen'];
+        $_SESSION['IDVaiTro'] = $row['IDVaiTro']; // 🔥 thêm dòng này
 
-        header("location:../index.php");
-         exit();
+            // phân quyền
+            if($row['IDVaiTro'] == 1){
+                header("location:../admin/index.php"); // admin
+            }else{
+                header("location:../index.php"); // user
+            }
+            exit();
     } else {
 
          $error = "Sai tài khoản hoặc mật khẩu";
