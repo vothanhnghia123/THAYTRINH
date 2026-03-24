@@ -26,7 +26,9 @@ $row_sach = mysqli_fetch_assoc($kq_sach);
 $tong_sach = $row_sach['tong'];
 
 // Tổng khách hàng
-$sql_user = "SELECT COUNT(*) as tong FROM nguoidung";
+$sql_user = "SELECT COUNT(*) as tong 
+             FROM nguoidung 
+             WHERE IDVaiTro != 1";
 $kq_user = mysqli_query($connect, $sql_user);
 $row_user = mysqli_fetch_assoc($kq_user);
 $tong_user = $row_user['tong'];
