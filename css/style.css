@@ -867,7 +867,7 @@ text-align:left;
     justify-content: center;
     align-items: center;
     gap: 8px;
-    margin-top: 20px;
+    margin: 20px 0px;
 }
 
 .pagination a,

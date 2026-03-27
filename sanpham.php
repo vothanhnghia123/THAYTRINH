@@ -220,6 +220,9 @@ $query = mysqli_query($connect,$sql);
         </div>
         
     </div>
+    <?php 
+        include('modules/product.php');
+    ?>
 </div>
 </body>
 </html>
