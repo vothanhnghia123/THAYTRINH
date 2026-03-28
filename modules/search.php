@@ -3,8 +3,11 @@ include("../config.php");
 
 $key = $_GET['key'];
 
-$sql = "SELECT * FROM sach 
-        WHERE TenSach LIKE '%$key%' 
+$sql = "SELECT sach.*, tacgia.TenTacGia
+        FROM sach
+        LEFT JOIN tacgia ON sach.IDTacGia = tacgia.IDTacGia
+        WHERE sach.TenSach LIKE '%$key%' 
+           OR tacgia.TenTacGia LIKE '%$key%'
         LIMIT 5";
 
 $result = mysqli_query($connect,$sql);

@@ -56,11 +56,23 @@
             <div class="search-login">
                 <!-- tìm kiếm  -->
                 <div class="menu-search">
-                    <button type="button" class="button-search">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
 
-                    <input type="search" id="search-input" class="input-search" placeholder="Nhập để tìm...">
+                    <form action="/THAYTRINH/modules/timkiem.php" method="GET">
+
+                        <button type="submit" class="button-search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+
+                        <input 
+                            type="search" 
+                            id="search-input" 
+                            name="keyword"
+                            required
+                            class="input-search" 
+                            placeholder="Nhập để tìm..."
+                        >
+
+                    </form>
 
                     <div id="search-result" class="search-result"></div>
                 </div>

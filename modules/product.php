@@ -1,6 +1,6 @@
 
 <?php
-include("config.php");
+include(__DIR__ . "/../config.php");
 
 mysqli_set_charset($connect,"utf8");
 
@@ -16,7 +16,7 @@ $load_sach = mysqli_query($connect,$sql_sach);
 
         <?php while($row = mysqli_fetch_array($load_sach)) { ?>
 
-        <a class="item-sales" href="singleproduct.php?id=<?php echo $row['IDSach']; ?>">
+        <a class="item-sales" href="/THAYTRINH/singleproduct.php?id=<?php echo $row['IDSach']; ?>">
 
           <img class="product-image"
           src="/THAYTRINH/image/sach/<?php echo $row['HinhAnh']; ?>">

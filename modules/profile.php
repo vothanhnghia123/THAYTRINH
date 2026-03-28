@@ -93,13 +93,21 @@ $page = isset($_GET['page']) ? $_GET['page'] : "info";
     <!-- Bên trái -->
     <div class="profile-buttons">
 
-        <a href="profile.php?page=info" class="btn">Thông tin</a>
+        <a href="profile.php?page=info" class="btn">
+            <i class="fa-solid fa-user"></i> Thông tin
+        </a>
 
-        <a href="profile.php?page=orders" class="btn">Đơn hàng của tôi</a>
+        <a href="profile.php?page=orders" class="btn">
+            <i class="fa-solid fa-box"></i> Đơn hàng của tôi
+        </a>
 
-        <a href="profile.php?page=password" class="btn">Đổi mật khẩu</a>
+        <a href="profile.php?page=password" class="btn">
+            <i class="fa-solid fa-key"></i> Đổi mật khẩu
+        </a>
 
-        <a href="logout.php" class="btn logout">Đăng xuất</a>
+        <a href="logout.php" class="btn logout">
+            <i class="fa-solid fa-right-from-bracket"></i> Đăng xuất
+        </a>
 
     </div>
 
@@ -135,7 +143,9 @@ $page = isset($_GET['page']) ? $_GET['page'] : "info";
                 </div>
 
                 <div class="save-box">
-                    <button type="submit" name="luu" class="btn save">Lưu thay đổi</button>
+                    <button type="submit" name="luu" class="btn save">
+                        <i class="fa-solid fa-floppy-disk"></i> Lưu thay đổi
+                    </button>
                 </div>
             </form>
         <?php } ?>
@@ -189,7 +199,9 @@ $page = isset($_GET['page']) ? $_GET['page'] : "info";
                 </tr>
 
                 <?php
-                $sql_order = "SELECT * FROM donhang WHERE IDNguoiDung = $id";
+                $sql_order = "SELECT * FROM donhang 
+                    WHERE IDNguoiDung = $id 
+                    ORDER BY IDDonHang DESC";
                 $result_order = mysqli_query($connect, $sql_order);
 
                 while ($order = mysqli_fetch_assoc($result_order)) {

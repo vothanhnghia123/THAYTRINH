@@ -112,7 +112,7 @@
 
 /* ===== SEARCH ===== */
 
-.menu-search{
+.menu-search form{
     display:flex;
     align-items:center;
     position:relative;
@@ -138,16 +138,29 @@
     opacity:1;
 }
 /* tìm kiếm hiện bên dưới  */
+/* 🔥 THÊM DÒNG NÀY */
+.menu-search{
+    position:relative;
+}
+
+/* tìm kiếm hiện bên dưới  */
 .search-result{
     position:absolute;
     top:100%;
-    right:45px;   /* giống input */
-    width:250px;  /* giống input khi hover */
+    right:45px;
+
+    width:180px;        /* cố định theo input */
+    max-width:180px; 
+ 
+
     background:#fff;
     
     border-radius:8px;
     margin-top:5px;
     z-index:999;
+
+    /* 🔥 thêm cho đẹp */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .search-item{
@@ -170,6 +183,10 @@
 
 .search-item span{
     font-size:14px;
+
+    white-space: nowrap;        /* không xuống dòng */
+    overflow: hidden;           /* ẩn phần dư */
+    text-overflow: ellipsis;    /* hiện ... */
 }
 /*giảo hàng*/
 .cart-count{
@@ -417,7 +434,11 @@ font-weight:bold;
     padding:12px 15px;
     font-size:14px;
     text-align:left;   /* chữ sang trái */
-    width:100%;        /* nút rộng hết */
+    width:100%;   /* nút rộng hết */
+
+    display:flex;
+    align-items:center;
+    gap:8px; /* khoảng cách icon và chữ */
 }
 
 /* cột phải */
@@ -464,6 +485,10 @@ font-weight:bold;
     display:flex;
     justify-content:flex-end;
     margin-top:20px;
+    
+    display:flex;
+    align-items:center;
+    gap:8px;
 }
 /* thông báo cn*/
 .success-msg{

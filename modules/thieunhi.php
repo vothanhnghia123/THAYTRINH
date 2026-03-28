@@ -48,7 +48,7 @@ $dm = mysqli_fetch_assoc($kq_dm);
 
       </div>
           <div class="view-more">
-              <a href="/THAYTRINH/modules/sanpham.php?danhmuc=<?php echo $dm['IDDanhMuc']; ?>" class="btn-view-more">Xem thêm</a>
+              <a href="/THAYTRINH/sanpham.php?danhmuc=<?php echo $dm['IDDanhMuc']; ?>" class="btn-view-more">Xem thêm</a>
           </div>
     </div>
   </div>
