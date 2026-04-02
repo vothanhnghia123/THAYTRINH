@@ -195,13 +195,19 @@ $page = isset($_GET['page']) ? $_GET['page'] : "info";
                     <th>Mã đơn</th>
                     <th>Ngày</th>
                     <th>Tổng tiền</th>
+                    <th>Số lượng</th>
                     <th>Trạng thái</th>
                 </tr>
 
                 <?php
-                $sql_order = "SELECT * FROM donhang 
-                    WHERE IDNguoiDung = $id 
-                    ORDER BY IDDonHang DESC";
+                    $sql_order = "SELECT donhang.*, 
+                                        SUM(chitietdonhang.SoLuong) AS TongSoLuong
+                                FROM donhang
+                                JOIN chitietdonhang 
+                                ON donhang.IDDonHang = chitietdonhang.IDDonHang
+                                WHERE donhang.IDNguoiDung = $id
+                                GROUP BY donhang.IDDonHang
+                                ORDER BY donhang.IDDonHang DESC";
                 $result_order = mysqli_query($connect, $sql_order);
 
                 while ($order = mysqli_fetch_assoc($result_order)) {
@@ -210,7 +216,25 @@ $page = isset($_GET['page']) ? $_GET['page'] : "info";
                         <td><?php echo $order['IDDonHang']; ?></td>
                         <td><?php echo $order['NgayDat']; ?></td>
                         <td><?php echo number_format($order['TongTien']); ?> đ</td>
-                        <td><?php echo $order['TrangThai']; ?></td>
+                        <td><?php echo $order['TongSoLuong']; ?></td>
+                        <td>
+                            <?php 
+                            $tt = $order['TrangThai'];
+                            if($tt == 0) {
+                                echo '<span class="badge bg-secondary">Chờ xác nhận</span>';
+                            } elseif($tt == 1) {
+                                echo '<span class="badge bg-info text-dark">Đã xác nhận</span>';
+                            } elseif($tt == 2) {
+                                echo '<span class="badge bg-warning text-dark">Đang chuẩn bị hàng</span>';
+                            } elseif($tt == 3) {
+                                echo '<span class="badge bg-primary">Đang giao</span>';
+                            } elseif($tt == 4) {
+                                echo '<span class="badge bg-success">Đã giao</span>';
+                            } else {
+                                echo '<span class="badge bg-danger">Đã hủy</span>';
+                            }
+                            ?>
+                        </td>
                     </tr>
                 <?php } ?>
             </table>

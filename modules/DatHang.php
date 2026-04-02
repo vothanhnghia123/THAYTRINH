@@ -14,7 +14,23 @@ if(!isset($_SESSION['id_them_vao_gio'])){
 }
 
 // Lấy dữ liệu từ form
+// ❗ CHƯA LOGIN
+if(!isset($_SESSION['IDNguoiDung'])){
+    header("Location: login.php");
+    exit();
+}
 
+// ❗ KIỂM TRA THIẾU THÔNG TIN
+$id = $_SESSION['IDNguoiDung'];
+
+$sql = "SELECT DienThoai, DiaChi FROM nguoidung WHERE IDNguoiDung='$id'";
+$kq = mysqli_query($connect,$sql);
+$u = mysqli_fetch_array($kq);
+
+if(empty($u['DienThoai']) || empty($u['DiaChi'])){
+    header("Location: cart.php?thieu=1");
+    exit();
+}
 
 // Nếu có đăng nhập thì lấy ID user
 $idNguoiDung = isset($_SESSION['IDNguoiDung']) ? $_SESSION['IDNguoiDung'] : 0;
@@ -38,7 +54,7 @@ for($i=0; $i<count($_SESSION['id_them_vao_gio']); $i++){
 $sql_donhang = "INSERT INTO donhang(
     IDNguoiDung, NgayDat, TongTien, TrangThai, PhuongThucTT
 ) VALUES(
-    '$idNguoiDung', NOW(), '$tongTien', 'Đang xử lý', '$thanhtoan'
+    '$idNguoiDung', NOW(), '$tongTien', 0, '$thanhtoan'
 )";
 
 mysqli_query($connect,$sql_donhang);

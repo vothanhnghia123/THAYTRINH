@@ -246,7 +246,7 @@ if(isset($_SESSION['IDNguoiDung'])){
             ĐẶT HÀNG
         </h3>
 
-        <form action="<?php echo $thieuThongTin ? 'luu_diachi.php' : 'DatHang.php'; ?>" method="post">
+        <form action="DatHang.php" method="post">
 
             <!-- LUÔN HIỆN -->
             <label>Phương thức thanh toán</label>
